@@ -2,6 +2,7 @@
 <html>
 
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>send massage on whatsapp</title>
         <style>
             * {
@@ -12,12 +13,36 @@
             .BINPUTC:hover {
                 border: 2.5px solid black;
             }
+
+            @media screen and (max-width: 480px) {
+                .Mob {
+                    margin-left: 7%;
+
+                }
+
+                .MobPno {
+                    margin-top: 25px;
+
+                }
+
+                .MobLabel {
+                    display: none;
+                }
+            }
+
+            @media screen and (min-width: 481px) {
+                .Pc {
+                    margin-left: 40%;
+
+                }
+            }
         </style>
     </head>
 
     <body style="position: relative; background-image: url('bgW.jpg');">
-        <form style="margin-left: 40%; padding: 10px; margin-top: 15%; border: 2px dotted black; position: absolute;">
-            <label>Phone no:</label>
+        <form style=" padding: 10px; margin-top: 15%;margin-right: 7%; border: 2px dotted black; position: absolute;"
+            class="Mob Pc">
+            <label class="MobLabel">Phone no:</label>
 
 
             <select name="countryCode" id="CountryCode" required style="max-width: 110px;">
@@ -242,7 +267,8 @@
                 </optgroup>
             </select>
 
-            <input type="text" id="PhoneNo" name="PhoneNo" required size="13" placeholder="Whatsapp Number"><br><br>
+            <input type="text" id="PhoneNo" name="PhoneNo" required size="13" placeholder="Whatsapp Number"
+                class="MobPno"><br><br>
 
 
             <label>Type your massage here:</label>
@@ -256,16 +282,6 @@
 
 
             function myFunction() {
-
-
-
-
-
-
-
-
-
-
                 var ab = document.getElementById('PhoneNo').value;
                 var abc = document.getElementById('Massage').value;
                 var Code = document.getElementById('CountryCode').value;
@@ -277,12 +293,8 @@
                     ab.focus();
 
                 } else {
-
-
                     window.open("https://wa.me/" + c, "_blank");
-                
                 }
-
             }
         </script>
 
